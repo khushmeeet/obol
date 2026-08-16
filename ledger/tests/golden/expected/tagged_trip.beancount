@@ -1,0 +1,41 @@
+1970-01-01 commodity USD
+
+2024-05-01 open Assets:Checking
+2024-05-01 open Equity:Opening-Balances
+2024-05-01 open Expenses:Food:Coffee
+2024-05-01 open Expenses:Food:Restaurant
+2024-05-01 open Expenses:Travel:Flights
+2024-05-01 open Expenses:Travel:Hotel
+2024-05-01 open Liabilities:Card
+
+2024-06-15 note Liabilities:Card "Card statement includes the NYC trip charges"
+
+2024-06-10 event "location" "New York, NY"
+2024-06-14 event "location" "Boston, MA"
+
+2024-05-01 * "opening balance"
+  Equity:Opening-Balances  -3000.00 USD
+  Assets:Checking  3000.00 USD
+
+2024-06-01 * "Delta" "" #trip-nyc-2024 ^nyc-itinerary
+  booking-ref: "XK4J9"
+  Liabilities:Card  -450.00 USD
+    plaid-id: "plaid-txn-081"
+  Expenses:Travel:Flights  450.00 USD
+
+2024-06-12 * "Hotel Chelsea" "" #trip-nyc-2024 ^nyc-itinerary
+  nights: 4
+  Liabilities:Card  -620.00 USD
+  Expenses:Travel:Hotel  620.00 USD
+
+2024-06-13 * "Katz's" "" #trip-nyc-2024
+  Assets:Checking  -84.60 USD
+  Expenses:Food:Restaurant  84.60 USD
+
+2024-06-13 * "Blue Bottle" "" #trip-nyc-2024
+  Assets:Checking  -6.25 USD
+  Expenses:Food:Coffee  6.25 USD
+
+2024-06-20 * "Thai Palace" ""
+  Assets:Checking  -52.40 USD
+  Expenses:Food:Restaurant  52.40 USD

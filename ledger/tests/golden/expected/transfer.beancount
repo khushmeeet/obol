@@ -1,0 +1,13 @@
+1970-01-01 commodity USD
+
+2024-01-01 open Assets:Checking
+2024-01-01 open Assets:Savings
+2024-01-01 open Equity:Opening-Balances
+
+2024-01-01 * ""
+  Equity:Opening-Balances  -1000.00 USD
+  Assets:Checking  1000.00 USD
+
+2024-01-15 * "move to savings"
+  Assets:Checking  -250.00 USD
+  Assets:Savings  250.00 USD

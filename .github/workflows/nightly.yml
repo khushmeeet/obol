@@ -1,0 +1,31 @@
+# Nightly differential fuzzing (plan §8.4): the same property suite as
+# ci, but the beancount-differential test runs with a much larger
+# Hypothesis example budget. Green for a week is part of the library's
+# definition of done (plan §13).
+name: nightly
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  fuzz:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ledger
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: Sync dependencies
+        run: uv sync
+        working-directory: .
+      - name: Differential fuzz (large budget)
+        run: uv run pytest -q tests/properties/test_differential.py --hypothesis-show-statistics
+        env:
+          LEDGER_FUZZ_EXAMPLES: "1500"
+      - name: Corpus gate
+        run: uv run pytest -q -m corpus

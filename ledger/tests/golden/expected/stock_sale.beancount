@@ -1,0 +1,31 @@
+option "operating_currency" "USD"
+
+1970-01-01 commodity AAPL
+1970-01-01 commodity USD
+
+2024-01-02 open Assets:ETrade:AAPL "FIFO"
+2024-01-02 open Assets:ETrade:Cash
+2024-01-02 open Equity:Opening-Balances
+2024-01-02 open Expenses:Financial:Commissions
+2024-03-18 open Income:Gains:ETrade
+
+2024-03-28 price AAPL 190.50 USD
+
+2024-01-02 * "opening balance"
+  Assets:ETrade:Cash  10000.00 USD
+  Equity:Opening-Balances  -10000.00 USD
+
+2024-01-05 * "Buy 8 AAPL"
+  Assets:ETrade:AAPL  8 AAPL {156.25 USD}
+  Assets:ETrade:Cash  -1250.00 USD
+
+2024-02-09 * "Buy 7 AAPL"
+  Assets:ETrade:AAPL  7 AAPL {172.00 USD}
+  Assets:ETrade:Cash  -1204.00 USD
+
+2024-03-18 * "Sell 10 AAPL"
+  Assets:ETrade:AAPL  -8 AAPL {156.25 USD, 2024-01-05} @ 189.10 USD
+  Assets:ETrade:AAPL  -2 AAPL {172.00 USD, 2024-02-09} @ 189.10 USD
+  Assets:ETrade:Cash  1882.05 USD
+  Expenses:Financial:Commissions  8.95 USD
+  Income:Gains:ETrade  -297.00 USD

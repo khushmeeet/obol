@@ -1,0 +1,26 @@
+# The M8 corpus gate (plan §10), split out of the main ci workflow so
+# the fast suite stays fast: import five multi-year bean-example
+# ledgers on both backends and compare against Beancount exactly.
+name: corpus
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  corpus:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ledger
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: Sync dependencies
+        run: uv sync
+        working-directory: .
+      - name: Corpus gate
+        run: uv run pytest -q -m corpus

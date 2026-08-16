@@ -1,7 +1,7 @@
 [project]
 name = "ledger"
 version = "0.1.0"
-description = "Add your description here"
+description = "Product-independent double-entry accounting engine on SQLite"
 readme = "README.md"
 authors = [
     { name = "Khushmeet Singh", email = "khushmeetsingh1996@gmail.com" }
@@ -9,6 +9,37 @@ authors = [
 requires-python = ">=3.14"
 dependencies = []
 
+[dependency-groups]
+dev = [
+    "pytest>=8.4",
+    "hypothesis>=6.130",
+    "mypy>=1.19",
+    "ruff>=0.14",
+    "beancount==3.2.3",
+]
+
+[project.scripts]
+ledger = "ledger.cli:main"
+
 [build-system]
 requires = ["uv_build>=0.11.21,<0.12.0"]
 build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "corpus: bean-example corpus comparisons — the slow M8 gate (plan §10)",
+]
+
+[tool.mypy]
+# The domain layer is pure; strict typing there costs little and catches
+# sign/unit errors (plan §2). Storage/query get typed but not strict yet.
+strict = true
+files = ["src/ledger/domain"]
+
+[tool.ruff]
+line-length = 88
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]

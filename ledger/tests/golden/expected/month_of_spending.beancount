@@ -1,0 +1,33 @@
+1970-01-01 commodity USD
+
+2024-01-01 open Assets:Checking
+2024-01-01 open Equity:Opening-Balances
+2024-01-01 open Expenses:Food:Coffee
+2024-01-01 open Expenses:Food:Groceries
+2024-01-01 open Expenses:Food:Restaurant
+2024-01-01 open Expenses:Home:Rent
+2024-01-01 open Liabilities:Card
+
+2024-01-01 * "opening balance"
+  Equity:Opening-Balances  -2500.00 USD
+  Assets:Checking  2500.00 USD
+
+2024-01-02 * "Landlord" ""
+  Assets:Checking  -1400.00 USD
+  Expenses:Home:Rent  1400.00 USD
+
+2024-01-05 * "Safeway" ""
+  Liabilities:Card  -85.30 USD
+  Expenses:Food:Groceries  85.30 USD
+
+2024-01-12 * "Thai Palace" ""
+  Liabilities:Card  -42.15 USD
+  Expenses:Food:Restaurant  42.15 USD
+
+2024-01-14 * "Blue Bottle" ""
+  Assets:Checking  -4.50 USD
+  Expenses:Food:Coffee  4.50 USD
+
+2024-01-28 * "card autopay"
+  Assets:Checking  -127.45 USD
+  Liabilities:Card  127.45 USD

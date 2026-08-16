@@ -1,0 +1,42 @@
+1970-01-01 commodity IRAUSD
+1970-01-01 commodity USD
+1970-01-01 commodity VACHR
+
+2024-01-01 open Assets:BofA:Checking
+2024-01-01 open Assets:Federal:PreTax401k
+2024-01-01 open Assets:Hooli:Vacation
+2024-01-01 open Assets:Vanguard:Match401k
+2024-01-01 open Assets:Vanguard:PreTax401k
+2024-01-01 open Expenses:Fees:Payroll
+2024-01-01 open Expenses:Health:Dental
+2024-01-01 open Expenses:Health:Insurance
+2024-01-01 open Expenses:Health:Vision
+2024-01-01 open Expenses:Taxes:Federal
+2024-01-01 open Expenses:Taxes:Medicare
+2024-01-01 open Expenses:Taxes:PreTax401k
+2024-01-01 open Expenses:Taxes:SDI
+2024-01-01 open Expenses:Taxes:SocSec
+2024-01-01 open Expenses:Taxes:State
+2024-01-01 open Income:Hooli:Bonus
+2024-01-01 open Income:Hooli:Salary
+2024-01-01 open Income:Hooli:Vacation
+
+2024-01-15 * "Hooli" "Payroll"
+  Income:Hooli:Salary  -4432.16 USD
+  Income:Hooli:Bonus  -183.22 USD
+  Assets:BofA:Checking  1350.60 USD
+  Assets:Vanguard:PreTax401k  961.54 USD
+  Assets:Vanguard:Match401k  238.46 USD
+  Expenses:Taxes:Federal  1062.92 USD
+  Expenses:Taxes:State  561.29 USD
+  Expenses:Taxes:SocSec  286.15 USD
+  Expenses:Taxes:Medicare  106.62 USD
+  Expenses:Taxes:SDI  1.12 USD
+  Expenses:Health:Insurance  24.32 USD
+  Expenses:Health:Dental  2.90 USD
+  Expenses:Health:Vision  18.48 USD
+  Expenses:Fees:Payroll  0.98 USD
+  Assets:Federal:PreTax401k  -1200.00 IRAUSD
+  Expenses:Taxes:PreTax401k  1200.00 IRAUSD
+  Assets:Hooli:Vacation  5 VACHR
+  Income:Hooli:Vacation  -5 VACHR

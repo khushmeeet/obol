@@ -1,0 +1,28 @@
+1970-01-01 commodity USD
+
+2024-03-01 open Assets:Chase:Checking
+2024-03-01 open Equity:Opening-Balances
+2024-03-01 open Expenses:Food:Groceries
+2024-03-01 open Expenses:Utilities
+2024-03-01 open Income:Employer:Salary
+
+2024-03-01 pad Assets:Chase:Checking Equity:Opening-Balances
+
+2024-03-10 balance Assets:Chase:Checking 5000.00 USD
+2024-03-15 balance Assets:Chase:Checking 4939.50 USD
+
+2024-03-02 * "Safeway" ""
+  Assets:Chase:Checking  -54.23 USD
+  Expenses:Food:Groceries  54.23 USD
+
+2024-03-05 * "Employer" "Payroll"
+  Assets:Chase:Checking  2000.00 USD
+  Income:Employer:Salary  -2000.00 USD
+
+2024-03-07 * "City Power" ""
+  Assets:Chase:Checking  -120.00 USD
+  Expenses:Utilities  120.00 USD
+
+2024-03-12 * "Safeway" ""
+  Assets:Chase:Checking  -60.50 USD
+  Expenses:Food:Groceries  60.50 USD
